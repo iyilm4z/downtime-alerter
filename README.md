@@ -1,2 +1,2 @@
-# potential-tribble
-A web application to monitor target applications’ health.
+# downtime-alerter
+A web application to monitor health checks of any targeted website by url.
