@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props"></Import>
+
+  <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DowntimeAlerter</RootNamespace>
+  </PropertyGroup>
+</Project>
