@@ -1,0 +1,34 @@
+﻿@model UserEditDto
+@{
+    ViewData["Title"] = "Create User";
+    ViewData["CurrentPage"] = PageNames.Users;
+}
+
+<form asp-action="CreateOdEdit" method="post">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <h1>
+                        Create User
+                        <span class="h6 px-2">
+                            <i class="fa fa-arrow-circle-left"></i>
+                            <a asp-action="List">Back to List</a>
+                        </span>
+                    </h1>
+                </div>
+                <div class="col-6 text-right">
+                    <button type="submit" name="save" class="btn bg-blue">
+                        <i class="fas fa-save"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content px-2">
+        <div class="container-fluid">
+            @await Html.PartialAsync("_CreateOrEdit", Model)
+        </div>
+    </section>
+</form>

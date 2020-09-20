@@ -3,7 +3,7 @@
     public enum UserRole
     {
         Guest,
-        Registered,
+        User,
         Admin
     }
 }

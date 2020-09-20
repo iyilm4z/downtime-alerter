@@ -1,0 +1,54 @@
+﻿@model UserEditDto
+
+<input asp-for="Id" type="hidden" />
+<input asp-for="Role" type="hidden" />
+
+<div class="card">
+    <div class="card-body">
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                User Name
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" asp-for="UserName" readonly="@(Model?.UserName == AppDefaults.AdminUserName ? "readonly" : null)">
+                <span asp-validation-for="UserName"></span>
+            </div>
+        </div>
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Name
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" asp-for="Name">
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Surname
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" asp-for="Surname">
+                <span asp-validation-for="Surname"></span>
+            </div>
+        </div>
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Email
+            </div>
+            <div class="col-md-9">
+                <input type="email" class="form-control" asp-for="Email">
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Password
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" asp-for="Password">
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+    </div>
+</div>

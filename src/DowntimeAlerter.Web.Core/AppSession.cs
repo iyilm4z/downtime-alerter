@@ -66,9 +66,9 @@ namespace DowntimeAlerter.Web
                     var userCookie = GetUserCookie();
                     if (!string.IsNullOrEmpty(userCookie))
                     {
-                        if (Guid.TryParse(userCookie, out var customerGuid))
+                        if (Guid.TryParse(userCookie, out var userGuid))
                         {
-                            var userByGuid = _userRepository.GetUserByGuid(customerGuid);
+                            var userByGuid = _userRepository.GetUserByGuid(userGuid);
                             if (userByGuid != null && !userByGuid.IsRegistered())
                                 user = userByGuid;
                         }

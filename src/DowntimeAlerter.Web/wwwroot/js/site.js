@@ -72,4 +72,8 @@
         });
         $this[0].reset();
     };
+
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
 })(jQuery);

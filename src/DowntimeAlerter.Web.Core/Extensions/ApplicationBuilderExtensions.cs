@@ -1,6 +1,7 @@
 ﻿using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using DowntimeAlerter.Engine;
+using DowntimeAlerter.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -37,7 +38,11 @@ namespace DowntimeAlerter.Web.Extensions
 
                     try
                     {
-                        // We can use DI to log db
+                        //get current user
+                        var user = EngineContext.Current.Resolve<IAppSession>().User;
+
+                        //log error
+                        EngineContext.Current.Resolve<ILogger>().Error(exception.Message, exception, user);
                     }
                     finally
                     {

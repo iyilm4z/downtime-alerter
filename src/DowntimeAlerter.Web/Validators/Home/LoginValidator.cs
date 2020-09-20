@@ -1,8 +1,8 @@
 ﻿using DowntimeAlerter.Configuration;
-using DowntimeAlerter.Web.Models.Authentication;
+using DowntimeAlerter.Web.Models.Home;
 using FluentValidation;
 
-namespace DowntimeAlerter.Web.Validators.Authentication
+namespace DowntimeAlerter.Web.Validators.Home
 {
     public class LoginValidator : AbstractValidator<LoginModel>
     {

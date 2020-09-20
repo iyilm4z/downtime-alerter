@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using DowntimeAlerter.Web.Mvc.Models;
 
-namespace DowntimeAlerter.Web.Models.Authentication
+namespace DowntimeAlerter.Web.Models.Home
 {
     public class LoginModel : AppModelBase
     {

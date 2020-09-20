@@ -4,7 +4,6 @@ using System.Net;
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Engine;
 using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +17,7 @@ namespace DowntimeAlerter.Web.Extensions
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             var appConfig = services.ConfigureStartupConfig<AppConfig>(configuration.GetSection("App"));
+            services.ConfigureStartupConfig<EmailConfig>(configuration.GetSection("Email"));
 
             services.AddHttpContextAccessor();
             services.AddMvcCore();
@@ -88,6 +88,11 @@ namespace DowntimeAlerter.Web.Extensions
             {
                 optionsBuilder.UseSqlServerWithLazyLoading(services);
             });
+
+            //services.AddDbContext<AppDbContext>(optionsBuilder =>
+            //{
+            //    optionsBuilder.UseSqlServerWithLazyLoading(services);
+            //}, ServiceLifetime.Transient);
         }
 
         public static void AddAppAntiForgery(this IServiceCollection services)

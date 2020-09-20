@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Emails";
+    ViewData["CurrentPage"] = PageNames.Emails;
+}
+
+<section class="content-header">
+    @await Html.PartialAsync("_List.Header.cshtml")
+</section>
+<section class="content px-2">
+    @await Html.PartialAsync("_List.Content.cshtml")
+</section>

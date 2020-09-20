@@ -1,0 +1,40 @@
+﻿@using DowntimeAlerter.Monitoring
+@model TargetApplicationEditDto
+
+<input asp-for="Id" type="hidden" />
+
+<div class="card">
+    <div class="card-body">
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Name
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" asp-for="Name">
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Url
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" asp-for="Url">
+                <span asp-validation-for="Url"></span>
+            </div>
+        </div>
+        <div class="form-group row required">
+            <div class="col-md-3 col-form-label">
+                Interval
+            </div>
+            <div class="col-md-9">
+                <select class="form-control" asp-for="Interval">
+                    <option value="@((int)MonitorInterval.Low)">Low(20 seconds)</option>
+                    <option value="@((int)MonitorInterval.Medium)">Medium(40 seconds)</option>
+                    <option value="@((int)MonitorInterval.High)">High(1 minute)</option>
+                </select>
+                <span asp-validation-for="Interval"></span>
+            </div>
+        </div>
+    </div>
+</div>

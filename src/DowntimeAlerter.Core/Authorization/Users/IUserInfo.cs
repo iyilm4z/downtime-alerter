@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DowntimeAlerter
+namespace DowntimeAlerter.Authorization.Users
 {
     public interface IUserInfo
     {
@@ -17,5 +17,7 @@ namespace DowntimeAlerter
         string UserName { get; set; }
 
         string Email { get; set; }
+
+        UserRole Role { get; set; }
     }
 }

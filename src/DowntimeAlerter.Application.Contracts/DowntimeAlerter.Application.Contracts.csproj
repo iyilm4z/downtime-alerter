@@ -9,8 +9,4 @@
   <ItemGroup>
     <ProjectReference Include="..\DowntimeAlerter.Domain.Shared\DowntimeAlerter.Domain.Shared.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Authorization\Users\Dto\" />
-  </ItemGroup>
 </Project>

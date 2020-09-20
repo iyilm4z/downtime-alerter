@@ -1,0 +1,60 @@
+﻿@model List<UserListDto>
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Total: @Model.Count
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table id="UsersTable" class="table table-hover text-nowrap">
+                <thead class="bg-light">
+                    <tr>
+                        <th style="width: 200px;">Actions</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td style="width: 200px;">
+                                <a class="btn btn-sm bg-secondary" asp-action="Edit" asp-route-id="@user.Id">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    Edit
+                                </a>
+                                @if (user.Role != UserRole.Admin)
+                                {
+                                    <a class="btn btn-sm bg-danger mx-2" asp-action="Delete" asp-route-id="@user.Id">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </a>
+                                }
+                            </td>
+                            <td>@user.Name</td>
+                            <td>@user.Surname</td>
+                            <td>@user.UserName</td>
+                            <td>@user.Email</td>
+                            <td>@user.Role</td>
+                        </tr>
+                    }
+
+                    @if (Model.Count <= 0)
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <h6>No records</h6>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            Total: @Model.Count
+        </div>
+    </div>
+</div>

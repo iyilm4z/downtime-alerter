@@ -1,4 +1,5 @@
-﻿using DowntimeAlerter.Web.Extensions;
+﻿using DowntimeAlerter.Monitoring;
+using DowntimeAlerter.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ namespace DowntimeAlerter.Web.Startup
             services.AddOptions();
             services.AddAppAntiForgery();
             services.AddRouting();
+            services.AddHostedService<TargetApplicationBackgroundJob>();
         }
 
         public void Configure(IApplicationBuilder application)

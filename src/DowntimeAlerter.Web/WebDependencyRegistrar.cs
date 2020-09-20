@@ -2,7 +2,7 @@
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Dependency;
 using DowntimeAlerter.Reflection;
-using DowntimeAlerter.Web.Factories.Authentication;
+using DowntimeAlerter.Web.Factories.Home;
 
 namespace DowntimeAlerter.Web
 {

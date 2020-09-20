@@ -2,6 +2,8 @@
 using DowntimeAlerter.Authorization.Users;
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Dependency;
+using DowntimeAlerter.Logging;
+using DowntimeAlerter.Monitoring;
 using DowntimeAlerter.Reflection;
 
 namespace DowntimeAlerter
@@ -12,6 +14,18 @@ namespace DowntimeAlerter
         {
             builder.RegisterType<UserAppService>()
                 .As<IUserAppService>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<TargetApplicationAppService>()
+                .As<ITargetApplicationAppService>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<DefaultLogger>()
+                .As<ILogger>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<LogAppService>()
+                .As<ILogAppService>()
                 .InstancePerLifetimeScope();
         }
 

@@ -3,7 +3,7 @@ using DowntimeAlerter.Seed;
 
 namespace DowntimeAlerter
 {
-    public class DbSeedingStartupTask : IStartupTask
+    public class EntityFrameworkCoreStartupTask : IStartupTask
     {
         public void Execute()
         {

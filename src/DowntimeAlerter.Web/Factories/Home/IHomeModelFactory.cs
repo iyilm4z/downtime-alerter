@@ -1,6 +1,6 @@
-﻿using DowntimeAlerter.Web.Models.Authentication;
+﻿using DowntimeAlerter.Web.Models.Home;
 
-namespace DowntimeAlerter.Web.Factories.Authentication
+namespace DowntimeAlerter.Web.Factories.Home
 {
     public interface IHomeModelFactory
     {

@@ -2,8 +2,8 @@
 using DowntimeAlerter.Authorization.Users;
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Domain.Repositories;
-using DowntimeAlerter.Web.Factories.Authentication;
-using DowntimeAlerter.Web.Models.Authentication;
+using DowntimeAlerter.Web.Factories.Home;
+using DowntimeAlerter.Web.Models.Home;
 using DowntimeAlerter.Web.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
