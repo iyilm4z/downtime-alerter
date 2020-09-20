@@ -1,0 +1,10 @@
+﻿@using DowntimeAlerter.Web.Areas.Admin.Views.Shared.Components.SidebarBrand
+@using DowntimeAlerter.Web.Areas.Admin.Views.Shared.Components.SidebarMenu
+@using DowntimeAlerter.Web.Areas.Admin.Views.Shared.Components.SidebarUserPanel
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    @(await Component.InvokeAsync<SidebarBrandViewComponent>())
+    <div class="sidebar">
+        @(await Component.InvokeAsync<SidebarUserPanelViewComponent>())
+        @(await Component.InvokeAsync<SidebarMenuViewComponent>())
+    </div>
+</aside>

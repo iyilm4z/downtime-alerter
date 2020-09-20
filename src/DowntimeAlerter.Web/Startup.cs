@@ -1,49 +1,37 @@
+using Autofac;
+using DowntimeAlerter.Configuration;
+using DowntimeAlerter.Engine;
+using DowntimeAlerter.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace DowntimeAlerter.Web
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+        private IEngine _engine;
+        private AppConfig _appConfig;
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            (_engine, _appConfig) = services.ConfigureApplicationServices(_configuration);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder application)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                //app.UseExceptionHandler("/Home/Error");
-            }
-            app.UseStaticFiles();
+            application.ConfigureRequestPipeline();
+        }
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            _engine.RegisterDependencies(builder, _appConfig);
         }
     }
 }
