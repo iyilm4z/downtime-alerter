@@ -32,7 +32,7 @@ namespace DowntimeAlerter.Web.Areas.Admin.Controllers
             return RedirectToAction(nameof(List));
         }
 
-        public IActionResult DeleteAll(int id)
+        public IActionResult DeleteAll()
         {
             _logAppService.DeleteAll();
             return RedirectToAction(nameof(List));

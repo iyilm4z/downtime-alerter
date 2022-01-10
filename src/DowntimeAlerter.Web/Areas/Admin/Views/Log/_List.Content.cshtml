@@ -1,0 +1,53 @@
+﻿@model List<LogListDto>
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Total: @Model.Count
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table id="LogsTable" class="table table-hover text-nowrap">
+                <thead class="bg-light">
+                <tr>
+                    <th style="width: 200px;">Actions</th>
+                    <th style="width: 200px;">Log Level</th>
+                    <th>Short Message</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var log in Model)
+                {
+                    <tr>
+                        <td style="width: 200px;">
+                            <a class="btn btn-sm bg-secondary" asp-action="View" asp-route-id="@log.Id">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </a>
+                            <a class="btn btn-sm bg-danger mx-2" asp-action="Delete" asp-route-id="@log.Id">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </a>
+                        </td>
+                        <td style="width: 200px;">@log.LogLevel</td>
+                        <td>
+                            @(log.ShortMessage?.Length > 100 ? log.ShortMessage[..100] + " ..." : log.ShortMessage)
+                        </td>
+                    </tr>
+                }
+
+                @if (Model.Count <= 0)
+                {
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <h6>No records</h6>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            Total: @Model.Count
+        </div>
+    </div>
+</div>
