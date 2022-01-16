@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\DowntimeAlerter.Web.Core\DowntimeAlerter.Web.Core.csproj" />
+	  <ProjectReference Include="..\DowntimeAlerter.Application.Contracts\DowntimeAlerter.Application.Contracts.csproj" />
 	</ItemGroup>
 
 </Project>
