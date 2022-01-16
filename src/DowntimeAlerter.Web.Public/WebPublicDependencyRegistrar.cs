@@ -1,20 +1,20 @@
 ﻿using Autofac;
-using DowntimeAlerter.Authentication;
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Dependency;
 using DowntimeAlerter.Reflection;
+using DowntimeAlerter.Web.Factories.Home;
 
-namespace DowntimeAlerter
+namespace DowntimeAlerter.Web
 {
-    public class DomainDependencyRegistrar : IDependencyRegistrar
+    public class WebPublicDependencyRegistrar : IDependencyRegistrar
     {
         public void Register(ContainerBuilder builder, ITypeFinder typeFinder, AppConfig config)
         {
-            builder.RegisterType<CookieAuthenticationManager>()
-                .As<IAuthenticationManager>()
+            builder.RegisterType<HomeModelFactory>()
+                .As<IHomeModelFactory>()
                 .InstancePerLifetimeScope();
         }
 
-        public int Order => 3;
+        public int Order => 8;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using DowntimeAlerter.Authorization;
+using DowntimeAlerter.Authentication;
 using DowntimeAlerter.Authorization.Users;
 using DowntimeAlerter.Domain.Repositories;
 using Microsoft.AspNetCore.Http;

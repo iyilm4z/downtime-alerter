@@ -65,11 +65,13 @@ namespace DowntimeAlerter.Web.Extensions
             application.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "areas",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                    "areas",
+                    "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapControllers();
             });
         }
     }

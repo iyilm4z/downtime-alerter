@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <Import Project="..\..\common.props"></Import>
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>DowntimeAlerter.Web</RootNamespace>
+        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DowntimeAlerter.Web.Core\DowntimeAlerter.Web.Core.csproj"/>
+    </ItemGroup>
+
+</Project>

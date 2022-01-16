@@ -1,0 +1,13 @@
+﻿@using DowntimeAlerter.Web.Areas.Admin.Views
+@model List<TargetApplicationListDto>
+@{
+    ViewData["Title"] = "Target Apps";
+    ViewData["CurrentPage"] = PageNames.TargetApps;
+}
+
+<section class="content-header">
+    @await Html.PartialAsync("_List.Header.cshtml")
+</section>
+<section class="content px-2">
+    @await Html.PartialAsync("_List.Content.cshtml", Model)
+</section>

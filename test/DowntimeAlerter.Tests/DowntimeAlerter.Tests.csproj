@@ -18,9 +18,4 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\DowntimeAlerter.Application\DowntimeAlerter.Application.csproj" />
-    <ProjectReference Include="..\..\src\DowntimeAlerter.EntityFrameworkCore\DowntimeAlerter.EntityFrameworkCore.csproj" />
-  </ItemGroup>
 </Project>

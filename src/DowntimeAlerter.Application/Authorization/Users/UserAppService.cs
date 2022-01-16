@@ -17,9 +17,16 @@ namespace DowntimeAlerter.Authorization.Users
             _userRepository = userRepository;
         }
 
-        public List<UserListDto> GetAll()
+        public List<UserListDto> GetAll(bool includeGuests = false)
         {
-            var entities = _userRepository.GetAllList();
+            var query = _userRepository.GetAll();
+
+            if (!includeGuests)
+            {
+                query = query.Where(x => x.Role != UserRole.Guest);
+            }
+
+            var entities = query.ToList();
 
             return entities.Select(entity => entity.ToModel<UserListDto>()).ToList();
         }

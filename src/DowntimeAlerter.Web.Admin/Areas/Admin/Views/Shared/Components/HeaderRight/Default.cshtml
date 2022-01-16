@@ -1,0 +1,10 @@
+﻿@*@using DowntimeAlerter.Web.Admin.Areas.Admin.Views.Shared.Components.HeaderNotificationsMenu*@
+<ul class="navbar-nav ml-auto">
+    @*  @(await Component.InvokeAsync<HeaderNotificationsMenuViewComponent>())*@
+    <li class="nav-item">
+        <a class="nav-link btn btn-light" asp-action="Logout" asp-controller="Authentication" asp-area="">
+            <i class="fas fa-arrow-circle-right"></i>
+            Log out
+        </a>
+    </li>
+</ul>

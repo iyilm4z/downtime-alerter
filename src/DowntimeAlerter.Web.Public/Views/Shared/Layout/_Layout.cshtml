@@ -1,0 +1,32 @@
+﻿@using DowntimeAlerter.Web.Views.Shared.Components.PublicHeader
+@using DowntimeAlerter.Web.Views.Shared.Components.PublicFooter
+@{
+    var pageTitle = !string.IsNullOrWhiteSpace(ViewBag.Title) ? ViewBag.Title + " / " : "";
+    pageTitle += AppDefaults.AppName;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>@pageTitle</title>
+
+    <link rel="icon" type="image/png" href="~/lib/admin-lte/dist/img/AdminLTELogo.png"/>
+
+    @await Html.PartialAsync("_Styles.cshtml")
+    @await RenderSectionAsync("Styles", false)
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+    @(await Component.InvokeAsync<PublicHeaderViewComponent>())
+    <div class="content-wrapper">
+        @RenderBody()
+    </div>
+    @(await Component.InvokeAsync<PublicFooterViewComponent>())
+</div>
+@await Html.PartialAsync("_Scripts.cshtml")
+@await RenderSectionAsync("Scripts", false)
+</body>
+</html>

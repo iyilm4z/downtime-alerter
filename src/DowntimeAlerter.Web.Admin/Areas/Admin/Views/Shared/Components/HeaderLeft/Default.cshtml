@@ -1,0 +1,23 @@
+﻿<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+    </li>
+    @if (_appSession.User.Role == UserRole.Admin)
+    {
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-action="Index" asp-controller="User" asp-area="Admin" class="nav-link">Users</a>
+        </li>
+    }
+    <li class="nav-item d-none d-sm-inline-block">
+        <a asp-action="Index" asp-controller="TargetApp" asp-area="Admin" class="nav-link">Target Apps</a>
+    </li>
+    @if (_appSession.User.Role == UserRole.Admin)
+    {
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-action="Index" asp-controller="Log" asp-area="Admin" class="nav-link">Logs</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-action="Index" asp-controller="Email" asp-area="Admin" class="nav-link">Emails</a>
+        </li>
+    }
+</ul>

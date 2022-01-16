@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace DowntimeAlerter
 {
-    public class AppDefaults
+    public static class AppDefaults
     {
         public const string AppName = "DowntimeAlerter";
 
@@ -16,7 +16,7 @@ namespace DowntimeAlerter
 
         public const string AdminUserName = "admin";
 
-        public class Cookie
+        public static class Cookie
         {
             public const string Prefix = ".DA";
 
@@ -27,13 +27,13 @@ namespace DowntimeAlerter
             public const string Antiforgery = ".Antiforgery";
         }
 
-        public class Authentication
+        public static class Authentication
         {
             public const string ClaimsIssuer = AppName;
 
             public const string AuthenticationScheme = "Authentication";
 
-            public static PathString LoginPath => new PathString("/Home/Login");
+            public static PathString LoginPath => new PathString("/Authentication/Login");
         }
     }
 }
