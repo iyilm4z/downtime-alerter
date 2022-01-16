@@ -1,7 +1,7 @@
 ﻿using DowntimeAlerter.Engine;
-using DowntimeAlerter.Seed;
+using DowntimeAlerter.EntityFrameworkCore.Seed;
 
-namespace DowntimeAlerter
+namespace DowntimeAlerter.EntityFrameworkCore
 {
     public class EntityFrameworkCoreStartupTask : IStartupTask
     {

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using DowntimeAlerter.Authorization.Users;
 
-namespace DowntimeAlerter.Seed.Authorization.Users
+namespace DowntimeAlerter.EntityFrameworkCore.Seed.Authorization.Users
 {
     public class UserSeeder
     {

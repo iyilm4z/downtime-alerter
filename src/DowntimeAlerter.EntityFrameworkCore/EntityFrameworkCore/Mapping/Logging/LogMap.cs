@@ -2,7 +2,7 @@ using DowntimeAlerter.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DowntimeAlerter.Mapping.Logging
+namespace DowntimeAlerter.EntityFrameworkCore.Mapping.Logging
 {
     public class LogMap : AppEntityTypeConfiguration<Log>
     {

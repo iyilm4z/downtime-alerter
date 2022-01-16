@@ -7,4 +7,8 @@
 		<RootNamespace>DowntimeAlerter.Web</RootNamespace>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\DowntimeAlerter.Web.Core\DowntimeAlerter.Web.Core.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Reflection;
 using DowntimeAlerter.Domain.Entities;
-using DowntimeAlerter.Mapping;
+using DowntimeAlerter.EntityFrameworkCore.Mapping;
 using Microsoft.EntityFrameworkCore;
 
-namespace DowntimeAlerter
+namespace DowntimeAlerter.EntityFrameworkCore
 {
     public class AppDbContext : DbContext, IDbContext
     {

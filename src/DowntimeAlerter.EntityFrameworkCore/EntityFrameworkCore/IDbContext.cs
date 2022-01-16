@@ -1,7 +1,7 @@
 ﻿using DowntimeAlerter.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DowntimeAlerter
+namespace DowntimeAlerter.EntityFrameworkCore
 {
     public interface IDbContext
     {

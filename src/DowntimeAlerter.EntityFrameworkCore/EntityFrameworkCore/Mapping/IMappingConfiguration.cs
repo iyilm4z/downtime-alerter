@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DowntimeAlerter.Mapping
+namespace DowntimeAlerter.EntityFrameworkCore.Mapping
 {
     public interface IMappingConfiguration
     {

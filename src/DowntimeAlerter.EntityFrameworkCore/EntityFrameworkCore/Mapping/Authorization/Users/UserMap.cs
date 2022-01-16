@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DowntimeAlerter.Mapping.Authorization.Users
+namespace DowntimeAlerter.EntityFrameworkCore.Mapping.Authorization.Users
 {
     public class UserMap : AppEntityTypeConfiguration<User>
     {

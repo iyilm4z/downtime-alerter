@@ -1,6 +1,6 @@
-﻿using DowntimeAlerter.Seed.Authorization.Users;
+﻿using DowntimeAlerter.EntityFrameworkCore.Seed.Authorization.Users;
 
-namespace DowntimeAlerter.Seed
+namespace DowntimeAlerter.EntityFrameworkCore.Seed
 {
     public static class SeedHelper
     {

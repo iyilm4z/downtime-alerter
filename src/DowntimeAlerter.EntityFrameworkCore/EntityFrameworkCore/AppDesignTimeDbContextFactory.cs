@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace DowntimeAlerter
+namespace DowntimeAlerter.EntityFrameworkCore
 {
     public class AppDesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {

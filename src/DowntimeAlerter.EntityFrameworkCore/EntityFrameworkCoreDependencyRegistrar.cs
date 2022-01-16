@@ -2,8 +2,8 @@
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Dependency;
 using DowntimeAlerter.Domain.Repositories;
+using DowntimeAlerter.EntityFrameworkCore;
 using DowntimeAlerter.Reflection;
-using DowntimeAlerter.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace DowntimeAlerter

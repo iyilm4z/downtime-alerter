@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Engine;
+using DowntimeAlerter.EntityFrameworkCore;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;

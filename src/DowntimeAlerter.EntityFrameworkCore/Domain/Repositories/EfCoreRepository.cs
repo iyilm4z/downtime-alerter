@@ -1,10 +1,10 @@
 ﻿using System;
-using DowntimeAlerter.Domain.Entities;
-using DowntimeAlerter.Domain.Repositories;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using DowntimeAlerter.Domain.Entities;
+using DowntimeAlerter.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-namespace DowntimeAlerter.Repositories
+namespace DowntimeAlerter.Domain.Repositories
 {
     public class EfCoreRepository<TEntity> : RepositoryBase<TEntity> where TEntity : Entity
     {

@@ -2,7 +2,7 @@ using DowntimeAlerter.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DowntimeAlerter.Mapping
+namespace DowntimeAlerter.EntityFrameworkCore.Mapping
 {
     public class AppEntityTypeConfiguration<TEntity> : IMappingConfiguration, IEntityTypeConfiguration<TEntity>
         where TEntity : Entity
