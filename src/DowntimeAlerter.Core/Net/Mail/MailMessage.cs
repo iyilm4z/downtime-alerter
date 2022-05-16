@@ -6,9 +6,9 @@ namespace DowntimeAlerter.Net.Mail
 {
     public class MailMessage
     {
-        public List<MailboxAddress> To { get; set; }
-        public string Subject { get; set; }
-        public string Content { get; set; }
+        public List<MailboxAddress> To { get; }
+        public string Subject { get; }
+        public string Content { get; }
         public MailMessage(IEnumerable<string> to, string subject, string content)
         {
             To = new List<MailboxAddress>();

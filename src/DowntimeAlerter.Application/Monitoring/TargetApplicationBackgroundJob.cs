@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using DowntimeAlerter.Authorization.Users;
 using DowntimeAlerter.Domain.Repositories;
 using DowntimeAlerter.Logging;
-using DowntimeAlerter.Net.Mail;
+using DowntimeAlerter.Notification;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -17,7 +17,7 @@ namespace DowntimeAlerter.Monitoring
     public class TargetApplicationBackgroundJob : IHostedService
     {
         private readonly IServiceScopeFactory _serviceScopeFactory;
-        private readonly IEmailSender _emailSender;
+        private readonly INotifier _notifier;
         private readonly HttpClient _httpClient;
         private readonly ILogger _logger;
 
@@ -25,11 +25,11 @@ namespace DowntimeAlerter.Monitoring
         private bool _isJobRunning;
 
         public TargetApplicationBackgroundJob(IServiceScopeFactory serviceScopeFactory,
-            IEmailSender emailSender,
+            INotifier notifier,
             ILogger logger)
         {
             _serviceScopeFactory = serviceScopeFactory;
-            _emailSender = emailSender;
+            _notifier = notifier;
             _logger = logger;
             _httpClient = new HttpClient();
         }
@@ -63,8 +63,8 @@ namespace DowntimeAlerter.Monitoring
                         var responseMessage = _httpClient.GetAsync(app.Url).GetAwaiter().GetResult();
                         if (responseMessage.StatusCode != HttpStatusCode.OK)
                         {
-                            var message = new MailMessage(userEmails, $"{AppDefaults.AppName} Notification", $"{app.Name} is DOWN.");
-                            _emailSender.SendEmail(message);
+                            var message = new NotifyModel(userEmails, $"{AppDefaults.AppName} Notification", $"{app.Name} is DOWN.");
+                            _notifier.Nofify(message);
                         }
                     }
                     catch (Exception ex)

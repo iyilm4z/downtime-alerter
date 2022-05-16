@@ -2,6 +2,7 @@
 using DowntimeAlerter.Configuration;
 using DowntimeAlerter.Dependency;
 using DowntimeAlerter.Net.Mail;
+using DowntimeAlerter.Notification;
 using DowntimeAlerter.Reflection;
 
 namespace DowntimeAlerter
@@ -12,6 +13,10 @@ namespace DowntimeAlerter
         {
             builder.RegisterType<MailKitEmailSender>()
                 .As<IEmailSender>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<DefaultNotifier>()
+                .As<INotifier>()
                 .InstancePerLifetimeScope();
         }
 
